@@ -1,16 +1,33 @@
+import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Column(
-    children: const <Widget>[
-      Text('Deliver features faster', textDirection: TextDirection.ltr),
-      Text('Craft beautiful UIs', textDirection: TextDirection.ltr),
-      Expanded(
-        child: FittedBox(
-          fit: BoxFit.contain, // otherwise the logo will be tiny
-          child: FlutterLogo(),
+void main() => runApp(ByteBankApp());
+
+class ByteBankApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.green,
+          ).copyWith(
+            secondary: Colors.blueAccent[700],
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blue[700],
+            )
+          ),
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.blueAccent[700],
+            textTheme: ButtonTextTheme.accent,
+          ),
         ),
-      ),
-    ],
-  ));
+        home:  ListaTransferencias(),
+    );
+  }
 }
+
+
+
+
